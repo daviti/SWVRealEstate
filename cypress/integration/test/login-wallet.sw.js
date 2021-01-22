@@ -14,12 +14,14 @@ describe('Log in to Superworld', () => {
   it('type into an element to log in', () => {
     //log in to SW real ESTATE
     cy.get('.MuiBox-root.jss8')
-    .type('ortizcdavid@gmail.com')
+    .type('superworldqaapp@gmail.com')
     cy.get('#passwordField').click({force: true})
-    .type('75202c50')
+    .type('Testtest1!')
     cy.contains('Sign in').click()
     cy.get('.connect-wallet__cardBtns.connect-wallet__redBtn').click({force: true})
-cy.pause()
+    cy.pause()
+  
+
   })
 
   it('type into an element to add a metamask wallet', () => {
@@ -29,7 +31,9 @@ cy.pause()
     cy.get('#passwordField').click({force: true})
     .type('75202c50')
     cy.contains('Sign in').click()
+
     cy.get('.connect-wallet__cardBtns.connect-wallet__redBtn').click({force: true})
+    .end()
 
   })
 
@@ -37,5 +41,4 @@ cy.pause()
 
 
 
-  .end()
 })

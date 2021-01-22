@@ -29,5 +29,6 @@ context('Location', () => {
   it('cy.url() - get the current URL', () => {
     // https://www.superworldapp.com/url
     cy.url().should('eq', 'https://www.superworldapp.com/')
+    .end()
   })
 })

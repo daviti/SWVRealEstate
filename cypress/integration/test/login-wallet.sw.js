@@ -13,26 +13,19 @@ describe('Log in to Superworld', () => {
 
   it('type into an element to log in', () => {
     //log in to SW real ESTATE
-    cy.get('.MuiBox-root.jss8')
+    cy.get('div.MuiBox-root.jss8').click({force: true})
     .type('superworldqaapp@gmail.com')
     cy.get('#passwordField').click({force: true})
     .type('Testtest1!')
     cy.contains('Sign in').click()
     cy.get('.connect-wallet__cardBtns.connect-wallet__redBtn').click({force: true})
-    cy.pause()
-  
-
+    cy.wait(10000)
   })
 
-  it('type into an element to add a metamask wallet', () => {
+  it('type into an element to serach for plots of land', () => {
     //log in to SW real ESTATE
-    cy.get('.MuiBox-root.jss8')
-    .type('ortizcdavid@gmail.com')
-    cy.get('#passwordField').click({force: true})
-    .type('75202c50')
-    cy.contains('Sign in').click()
-
-    cy.get('.connect-wallet__cardBtns.connect-wallet__redBtn').click({force: true})
+    cy.get('input').type('Tulum')
+    //cy.get('.popover').should('be.visible').contains('Tulum, Quintana Roo, Mexico').click()
     .end()
 
   })

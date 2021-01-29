@@ -4,9 +4,9 @@ describe('Log in to Superworld', () => {
     expect(true).to.equal(true)
     cy.visit('https://superworldappdev.herokuapp.com/')
     cy.get('#gatsby-focus-wrapper > header > div.container-box > div > div > div.navigation-wrapper > a > span.MuiButton-label').click()
-    cy.wait(2000)
+    cy.wait(3000)
     cy.contains('BUY REAL ESTATE').click()
-    cy.wait(2000)
+    cy.wait(3000)
     cy.contains('Click Here').click()
   })
 
@@ -29,8 +29,10 @@ describe('Log in to Superworld', () => {
 
   it('type into an element to serach for plots of land', () => {
     //Search for plots of land
-    cy.get('.MuiAutocomplete-hasPopupIcon').type('Tulum')
-    cy.contains('Tulum').click({force: true})
+    cy.get('.MuiAutocomplete-hasPopupIcon').type('Mexico City')
+    cy.contains('Mexico').click({force: true})
+  cy.wait(1000)
+    cy.get('button.mapboxgl-ctrl-icon.mapboxgl-ctrl-zoom-in').click().click().click() .click()
     .end()
 
   })
